@@ -9,6 +9,7 @@ interface BannerProps {
   colors: {
     color1: string;
     color2: string;
+    gradientAngle: number;
     iconColor1: string;
     iconColor2: string;
     textColor: string;
@@ -45,8 +46,7 @@ const Banner: React.FC<BannerProps> = ({ colors, technologies, fullName, role })
       <div
         className='banner'
         style={{
-          background: `linear-gradient(${colors.color1}, ${colors.color2})`,
-          color: `${colors.iconColor1}`,
+          background: `linear-gradient(${colors.gradientAngle}deg, ${colors.color1}, ${colors.color2})`,
           padding: '20px'
         }}>
         <div className='technologies-displayer'>
@@ -54,7 +54,7 @@ const Banner: React.FC<BannerProps> = ({ colors, technologies, fullName, role })
             <div key={index}
               className="technology-logo-item"
               style={{
-                filter: `drop-shadow(0 0 3px #${colors.iconColor2})`
+                filter: `drop-shadow(2px 2px 2px ${colors.iconColor2})`
               }}>
               {proficiencyIcons[tech]}
             </div>

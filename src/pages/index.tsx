@@ -8,6 +8,7 @@ const Home: React.FC = () => {
   const [colors, setColors] = useState({
     color1: '#D8F5E9',
     color2: '#B97676',
+    gradientAngle: 0,
     iconColor1: "blue",
     iconColor2: "gray",
     textColor: "black",
@@ -50,6 +51,10 @@ const Home: React.FC = () => {
     setColors((prevColors) => ({ ...prevColors, [type]: color.hex }));
   };
 
+  const handleAngleChange = (angle: number, type: string) => {
+    setColors((prevColors) => ({ ...prevColors, [type]: angle }));
+  };
+
   const handleTechnologyChange = (technology: string, isChecked: boolean) => {
     setTechnologies((prevTechnologies) => ({ ...prevTechnologies, [technology]: isChecked }));
   };
@@ -62,13 +67,25 @@ const Home: React.FC = () => {
         fullName={fullName}
         role={role} />
       <ColorPicker
-        label="Background Color 1"
+        label="Background Color Initial"
         color={colors.color1}
         onChange={(color) => handleColorChange(color, 'color1')} />
       <ColorPicker
-        label="Background Color 2"
+        label="Background Color Finish"
         color={colors.color2}
         onChange={(color) => handleColorChange(color, 'color2')} />
+      Gradient angle:
+      <input
+        type='number'
+        defaultValue={0}
+        min={0}
+        max={360}
+        step={1}
+        onChange={(e) => {
+          if (e.target.value)
+            handleAngleChange(parseInt(e.target.value), 'gradientAngle')
+        }}
+      />
       <ColorPicker
         label="Icon Color 1"
         color={colors.iconColor1}
@@ -83,7 +100,7 @@ const Home: React.FC = () => {
         onChange={(color) => handleColorChange(color, 'textColor')} />
 
       <div>
-        <h2>Proficient Technologies:</h2>
+        <h2>Technologies:</h2>
         {Object.keys(technologies).map((tech) => (
           <TechnologyCheckbox key={tech} technology={tech} onChange={handleTechnologyChange} />
         ))}
@@ -91,19 +108,18 @@ const Home: React.FC = () => {
 
       <div>
         <label>
-          Full Name:
+          Title:
           <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         </label>
         <br />
         <label>
-          Current Role:
+          Subtitle:
           <input type="text" value={role} onChange={(e) => setRole(e.target.value)} />
         </label>
       </div>
       <div>
         <button onClick={() => downloadBanner()}>download</button>
       </div>
-
     </div>
   );
 
