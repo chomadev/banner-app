@@ -31,7 +31,9 @@ const Banner: React.FC<BannerProps> = ({ colors, technologies, fullName, role })
     Apple: <SiApple />,
     Aws: <FaAws />,
     DotNet: <SiDotnet />,
-    Java: <FaJava />
+    Java: <FaJava />,
+    MicrosoftSQLServer: <SiMicrosoftsqlserver />,
+    AzureDevOps: <SiAzuredevops />
     // Add more icons for other technologies as needed
   };
 

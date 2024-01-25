@@ -25,6 +25,8 @@ const Home: React.FC = () => {
     Aws: boolean;
     DotNet: boolean;
     Java: boolean;
+    MicrosoftSQLServer: boolean;
+    AzureDevOps: boolean;
   }>({
     React: false,
     'Node.js': false,
@@ -38,6 +40,8 @@ const Home: React.FC = () => {
     Aws: false,
     DotNet: false,
     Java: false,
+    MicrosoftSQLServer: false,
+    AzureDevOps: false
   });
   const [fullName, setFullName] = useState('');
   const [role, setRole] = useState('');
