@@ -3,7 +3,7 @@ Next steps:
   - add option to use libraries:
     - trianglify
     - particles: https://marcbruederlin.github.io/particles.js/
-  (ideas from https://coolbackgrounds.io/)
+  (ideas from https://coolbackgrounds.io/) https://cssgradient.io/
   - select font for text
   - configure text border
   - text placement
