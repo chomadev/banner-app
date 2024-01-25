@@ -61,6 +61,7 @@ const Home: React.FC = () => {
 
   return (
     <div className='home_container'>
+      <h1>LinkedIn Banner Generator</h1>
       <Banner
         colors={colors}
         technologies={technologies}

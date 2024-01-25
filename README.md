@@ -1,3 +1,5 @@
+Live demo: https://banner-app-git-main-chomadev.vercel.app/
+
 Next steps:
   - allow to download image (https://github.com/tsayen/dom-to-image)
   - add option to use libraries:
