@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Input } from './ui/input';
 
 interface TechnologyCheckboxProps {
   technology: string;
@@ -15,9 +16,11 @@ const TechnologyCheckbox: React.FC<TechnologyCheckboxProps> = ({ technology, onC
 
   return (
     <div>
-      <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />
-        {technology}
+      <label className="flex items-center space-x-2">
+        <Input className="w-4 h-4" id="skill1" name="skill1" type="checkbox"
+          checked={checked} onChange={handleChange}
+        />
+        <span>{technology}</span>
       </label>
     </div>
   );
